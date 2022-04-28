@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'maven-publish'
 
 android {
   compileSdkVersion 32
@@ -23,28 +22,10 @@ android {
   }
 }
 
-afterEvaluate {
-  publishing {
-    publications {
-      // Creates a Maven publication called "release".
-      release(MavenPublication) {
-        // Applies the component for the release build variant.
-        from components.release
-
-        // You can then customize attributes of the publication as shown below.
-        groupId = "$library_group"
-        artifactId = "rtmp-rtsp-stream-client-java"
-        version = "$version_name"
-      }
-    }
-  }
-}
-
 dependencies {
   api project(':encoder')
   api project(':rtmp')
   api project(':rtsp')
   implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-  implementation 'com.github.theshiftstudio:rtmp-rtsp-stream-client-java:2.1.8'
-
+  implementation "com.github.theshiftstudio:rtmp-rtsp-stream-client-java:$version_name"
 }
