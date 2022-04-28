@@ -2,30 +2,25 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-  compileSdkVersion 32
+    compileSdkVersion 32
 
-  defaultConfig {
-    minSdkVersion 16
-    targetSdkVersion 32
-    versionCode version_code
-    versionName version_name
-  }
-  buildTypes {
-    release {
-      minifyEnabled false
-      consumerProguardFiles 'proguard-rules.pro'
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 32
+        versionCode version_code
+        versionName version_name
     }
-  }
-
-  publishing {
-    singleVariant("release")
-  }
+    buildTypes {
+        release {
+            minifyEnabled false
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
 }
 
 dependencies {
-  api project(':encoder')
-  api project(':rtmp')
-  api project(':rtsp')
-  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-  implementation "com.github.theshiftstudio:rtmp-rtsp-stream-client-java:$version_name"
+    api project(':encoder')
+    api project(':rtmp')
+    api project(':rtsp')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 }
