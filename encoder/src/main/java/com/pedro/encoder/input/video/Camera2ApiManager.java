@@ -1037,8 +1037,8 @@ public class Camera2ApiManager extends CameraDevice.StateCallback {
         }
     }
 
-    public SurfaceView getSurfaceView() {
-        return surfaceView;
+    public Surface getSurfaceEncoder() {
+        return surfaceEncoder;
     }
 
     public CameraCaptureSession getCameraCaptureSession() {
