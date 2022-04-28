@@ -144,6 +144,10 @@ public abstract class Camera2Base implements GetAacData, GetVideoData, GetMicrop
     init(context);
   }
 
+  public Camera2ApiManager getCameraManager() {
+    return cameraManager;
+  }
+
   private void init(Context context) {
     cameraManager = new Camera2ApiManager(context);
     videoEncoder = new VideoEncoder(this);
